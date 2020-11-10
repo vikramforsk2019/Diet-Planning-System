@@ -8,5 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
          path('', include('dietapp.urls', namespace='dietapp')),
           path('account/', include('accounts.urls', namespace='accounts')), 
-          path('profile', include('profile.urls', namespace='profile')),
+          path('profile/', include('profile.urls', namespace='profile')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
