@@ -1,5 +1,4 @@
-from dietapp.post_upload import post_upload
-from dietapp.profile_upload import profile_upload  #file upload
+from accounts.profile_upload import profile_upload  #file upload
 from django.shortcuts import render  
 from django.template import loader  
 from django.http import HttpResponse  

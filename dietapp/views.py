@@ -1,5 +1,4 @@
 from dietapp.post_upload import post_upload
-from dietapp.profile_upload import profile_upload  #file upload
 from django.shortcuts import render  
 from django.template import loader  
 from django.http import HttpResponse  
@@ -34,5 +33,10 @@ def health_data(request):
 		post_upload(request.FILES['postfile']) 
 		return redirect('/profile/') 
 
+def alltype(request): 
+	obj=Health_data.objects.all()
+	return render(request, 'dietapp/alltype.html',{'obj':obj})
 
-  
+def single(request,postid=id): 
+	print(postid)
+	return render(request, 'dietapp/single.html') 
