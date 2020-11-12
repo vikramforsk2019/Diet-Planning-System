@@ -310,7 +310,7 @@ var elem=$('#container ul');
 								<div class="clearfix"></div>
 							<ul class="list">
        {% for raw in obj %}
-								<a href=" {% url 'dietapp:single' raw.id %} ">
+								<a href=" {% url 'dietapp:single' postid=raw.id %} ">
 									<li>
 									<img src="{{ baseUrl }}upload/postpic/{{raw.postfile}}" alt="image description" title="" alt="" />
 									<section class="list-left">

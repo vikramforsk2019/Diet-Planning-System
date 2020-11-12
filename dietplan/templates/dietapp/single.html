@@ -105,17 +105,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">state</a>, <a href="#">city</a>| Added at 06:55 pm, Ad ID: 987654321</p>
 					<div class="flexslider">
 						<ul class="slides">
-							<li data-thumb="images/ss1.jpg">
-								<img src=" {% static 'images/ss1.jpg' %} " />
+							<li data-thumb="{{ baseUrl }}upload/postpic/{{obj.postfile}}">
+								<img src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" />
 							</li>
-							<li data-thumb="images/ss2.jpg">
-								<img src=" {% static 'images/ss2.jpg' %} " />
+							<li data-thumb="{{ baseUrl }}upload/postpic/{{obj.postfile}}">
+								<img src="{{ baseUrl }}upload/postpic/{{obj.postfile}}"/>
 							</li>
-							<li data-thumb="images/ss3.jpg">
-								<img src=" {% static 'images/ss3.jpg' %} " />
+							<li data-thumb="{{ baseUrl }}upload/postpic/{{obj.postfile}}">
+								<img src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" />
 							</li>
-							<li data-thumb="images/ss4.jpg">
-								<img src=" {% static 'images/ss4.jpg' %} " />
+							<li data-thumb="{{ baseUrl }}upload/postpic/{{obj.postfile}}">
+								<img src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" />
 							</li>
 						</ul>
 					</div>
@@ -143,18 +143,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
-							<p class="p-price">Price</p>
-							<h3 class="rate">$ 45999</h3>
+							<p class="p-price">Age</p>
+							<h3 class="rate">{{obj.age}} Year</h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
-							<p class="p-price">Condition</p>
-							<h4>Good</h4>
+							<p class="p-price">Group</p>
+							<h4>{{obj.group}}</h4>
 							<div class="clearfix"></div>
 						</div>
 						<div class="itemtype">
-							<p class="p-price">Item Type</p>
-							<h4>Cars</h4>
+							<p class="p-price">Weight</p>
+							<h4>{{obj.weight}}</h4>
 							<div class="clearfix"></div>
 						</div>
 					</div>

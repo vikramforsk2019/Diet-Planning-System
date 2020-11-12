@@ -38,5 +38,5 @@ def alltype(request):
 	return render(request, 'dietapp/alltype.html',{'obj':obj})
 
 def single(request,postid=id): 
-	print(postid)
-	return render(request, 'dietapp/single.html') 
+	obj=Health_data.objects.get(id=postid)
+	return render(request, 'dietapp/single.html',{'obj':obj}) 
