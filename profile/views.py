@@ -16,7 +16,7 @@ from django.contrib.auth.models import User
 def profile(request):
 	if request.session.get('semail'): 	
 		profile_data=Signup.objects.get(email=request.session.get('semail'))
-		post_data=Health_data.objects.filter(userid=profile_data.id)
+		post_data=Health_data.objects.filter(author=profile_data)
 		#print(post_data[0].postfile)
 		return render(request, 'profile/profile.html',{'profile_data':profile_data,'post_data':post_data})
 	else:

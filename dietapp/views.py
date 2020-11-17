@@ -15,7 +15,6 @@ from django.contrib.auth.models import User
 def index(request): 	 
 	return render(request, 'dietapp/index.html') 
 
-   
 #@login_required(login_url='/login/')
 def health_post(request): 
 	return render(request, 'dietapp/post-ad.html')
@@ -24,7 +23,7 @@ def health_data(request):
 	if request.method == 'POST':
 		user = Signup.objects.get(email=request.session.get('semail'))
 		post=Health_data()
-		post.userid=user.id		
+		post.author=user	
 		post.group= request.POST.get('group')	
 		post.age= request.POST.get('Age')
 		post.gender= request.POST.get('Gender')

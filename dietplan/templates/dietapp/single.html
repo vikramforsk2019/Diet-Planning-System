@@ -89,10 +89,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs">
-			<a href=" {% static 'index.html' %} "><i class="fa fa-home home_1"></i></a> / 
-			<a href=" {% static 'all-classifieds.html' %} ">All Ads</a> / 
-			<a href=" {% static 'cars.html' %} ">Cars</a> / 
-			<span>Car name</span></span>
+			<a href=' {% url "dietapp:homepage" %} '><i class="fa fa-home home_1"></i></a> / 
+			<a href=' {% url "dietapp:alltype" %} '>All Ads</a> / 
+			<a href="#">{{obj.group}}</a> / 
+			<span>{{obj.author.name}}</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->

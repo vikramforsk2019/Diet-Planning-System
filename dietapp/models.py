@@ -1,9 +1,10 @@
 from django.db import models
 import os
 from django.utils import timezone
+from accounts.models import Signup
 class Health_data(models.Model):
-	userid=models.IntegerField()
-	group= models.CharField(max_length=40)
+	author=models.ForeignKey(Signup, on_delete=models.CASCADE, default=None)
+	group= models.CharField(max_length=30)
 	gender= models.CharField(max_length=30)
 	title= models.CharField(max_length=225)
 	des= models.CharField(max_length=225)
