@@ -1,11 +1,16 @@
 from django.db import models
 import os
-
+from django.utils import timezone
 class Health_data(models.Model):
 	userid=models.IntegerField()
 	group= models.CharField(max_length=40)
+	gender= models.CharField(max_length=30)
+	title= models.CharField(max_length=225)
+	des= models.CharField(max_length=225)
 	age= models.IntegerField()
 	weight=models.IntegerField()
 	postfile=models.FileField()
+	date = models.DateTimeField(default=timezone.now, editable=False)
+	post_views=models.IntegerField(default=0)
 	class Meta:
 		db_table="health_data" 	

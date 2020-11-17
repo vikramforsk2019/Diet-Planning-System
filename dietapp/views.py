@@ -27,6 +27,9 @@ def health_data(request):
 		post.userid=user.id		
 		post.group= request.POST.get('group')	
 		post.age= request.POST.get('Age')
+		post.gender= request.POST.get('Gender')
+		post.title= request.POST.get('Title')
+		post.des= request.POST.get('des')
 		post.weight= request.POST.get('Weight')	
 		post.postfile=request.FILES['postfile'].name
 		post.save()
@@ -39,4 +42,6 @@ def alltype(request):
 
 def single(request,postid=id): 
 	obj=Health_data.objects.get(id=postid)
+	obj.post_views=obj.post_views+1 #This will also count multiple views by a single user.
+	obj.save()
 	return render(request, 'dietapp/single.html',{'obj':obj}) 

@@ -3,6 +3,7 @@
 <head>
 {% load static %}
  {% static "" as baseUrl %}
+ {% load humanize %}
   <!-- SITE TITTLE -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -130,7 +131,7 @@
 									<span class="add-id"><strong>Ad ID:</strong>{{raw.id}}</span>
 									<span class="add-id"><strong>Age:</strong>{{raw.age}} Year</span>
                                     <span class="add-id"><strong>Weight:</strong>{{raw.weight}} KG</span>
-									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
+									<span><strong>Posted on: </strong><time>{{raw.date|naturaltime}}</time> </span>
 									<span class="status active"><strong>Status</strong> Active</span>
 									<span class="location"><strong>Location</strong>kota/rajasthan</span>
 								</td>

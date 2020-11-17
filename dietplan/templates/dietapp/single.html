@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+<title>Health description</title>
 <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} "><!-- bootstrap-CSS -->
 <link rel="stylesheet" href=" {% static 'css/bootstrap-select.css' %} "><!-- bootstrap-select-CSS -->
 <link href=" {% static 'css/style.css' %} " rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
@@ -101,12 +101,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="product-desc">
 				<div class="col-md-7 product-view">
-					<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
-					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">state</a>, <a href="#">city</a>| Added at 06:55 pm, Ad ID: 987654321</p>
+					<h2>Health ISSUE:{{obj.title|upper}}</h2>
+					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">state</a>, <a href="#">city </a>{{obj.date}}</p>
 					<div class="flexslider">
 						<ul class="slides">
 							<li data-thumb="{{ baseUrl }}upload/postpic/{{obj.postfile}}">
-								<img src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" />
+				{% if obj.postfile.url|slice:"-4:" == ".mp4" %}
+                   <video controls> <source src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" > </video>
+                {% elif obj.postfile.url|slice:"-4:" == ".pdf" %}
+                   <embed src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" alt="My image" width="400px"/>
+                {% elif obj.postfile.url|slice:"-4:" == ".mp3" %}
+                   <audio controls>
+                    <source src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" alt="My image">
+                    </audio> 
+                {% else %}
+                    <img src="{{ baseUrl }}upload/postpic/{{obj.postfile}}" alt="image description" title="" alt="" />
+                {% endif %}
 							</li>
 							<li data-thumb="{{ baseUrl }}upload/postpic/{{obj.postfile}}">
 								<img src="{{ baseUrl }}upload/postpic/{{obj.postfile}}"/>
@@ -133,10 +143,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 					<!-- //FlexSlider -->
 					<div class="product-details">
-						<h4><span class="w3layouts-agileinfo">Brand </span> : <a href="#">Company name</a><div class="clearfix"></div></h4>
-						<h4><span class="w3layouts-agileinfo">Views </span> : <strong>150</strong></h4>
-						<h4><span class="w3layouts-agileinfo">Fuel </span> : Petrol</h4>
-						<h4><span class="w3layouts-agileinfo">Summary</span> :<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p><div class="clearfix"></div></h4>
+						<h4><span class="w3layouts-agileinfo">Title </span> : <a href="#">{{obj.title}}</a><div class="clearfix"></div></h4>
+						<h4><span class="w3layouts-agileinfo">Views </span> : <strong>{{obj.post_views}}</strong></h4>
+						<h4><span class="w3layouts-agileinfo">Gender </span> : {{obj.gender}}</h4>
+						<h4><span class="w3layouts-agileinfo">Summary</span> :<p>{{obj.des}}</p><div class="clearfix"></div></h4>
 					
 					</div>
 				</div>
@@ -159,21 +169,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="interested text-center">
-						<h4>Interested in this Ad?<small> Contact the Seller!</small></h4>
-						<p><i class="glyphicon glyphicon-earphone"></i>00-85-9875462655</p>
+						<h4>Interested in this Health Portal?<small> Contact the Adi!</small></h4>
+						<p><i class="glyphicon glyphicon-earphone"></i>+91-7230848467</p>
 					</div>
 						<div class="tips">
-						<h4>Safety Tips for Buyers</h4>
+						<h4>Safety Tips for Good Health</h4>
 							<ol>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
-								<li><a href="#">Contrary to popular belief.</a></li>
+								<li><a href="#">DO Yoga.</a></li>
+								<li><a href="#">Do Walking Daily.</a></li>
+								<li><a href="#">Do Spritiual Practice.</a></li>
+								<li><a href="#">Help to others.</a></li>
+								<li><a href="#">Mantra Meditation Pracice.</a></li>
+								<li><a href="#">Follow a Regulative time table.</a></li>
+								<li><a href="#">Don't watch for a long time.</a></li>
+								
 							</ol>
 						</div>
 				</div>

@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Resale_v2 a Classified ads Category Flat Bootstrap Responsive Website Template | All Classifieds :: w3layouts</title>
+<title>All POST</title>
 <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} "><!-- bootstrap-CSS -->
 <link rel="stylesheet" href=" {% static 'css/bootstrap-select.css' %} "><!-- bootstrap-select-CSS -->
 <link href=" {% static 'css/style.css' %} " rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
@@ -177,10 +177,10 @@ var elem=$('#container ul');
 			<div class="all-categories">
 				<h3> Select your category and find the perfect ad</h3>
 				<ul class="all-cat-list">
-					<li><a href=" {% static 'mobiles.html' %} ">Mobiles <span class="num-of-ads">(5,78,076)</span></a></li>
-					<li><a href=" {% static 'electronics-appliances.html' %} ">Electronics & Appliances  <span class="num-of-ads">(3,66,495)</span></a></li>
-					<li><a href=" {% static 'real-estate.html' %} ">Real Estate  <span class="num-of-ads">(45,450)</span></a></li>
-					<li><a href=" {% static 'furnitures.html' %} ">Furniture    <span class="num-of-ads">(1,77,145)</span></a></li>
+					<li><a href=" {% static 'mobiles.html' %} ">Child <span class="num-of-ads">(5,78,076)</span></a></li>
+					<li><a href=" {% static 'electronics-appliances.html' %} ">Young <span class="num-of-ads">(3,66,495)</span></a></li>
+					<li><a href=" {% static 'real-estate.html' %} ">Adult <span class="num-of-ads">(45,450)</span></a></li>
+					<li><a href=" {% static 'furnitures.html' %} ">Old <span class="num-of-ads">(1,77,145)</span></a></li>
 					<li><a href=" {% static 'pets.html' %} ">Pets   <span class="num-of-ads">(1,81,250)</span></a></li>
 					<li><a href=" {% static 'books-sports-hobbies.html' %} ">Books, Sports & Hobbies    <span class="num-of-ads">(66,822)</span></a></li>
 					<li><a href=" {% static 'fashion.html' %} ">Fashion   <span class="num-of-ads">(29,156)</span></a></li>
@@ -232,10 +232,12 @@ var elem=$('#container ul');
 					<div class="w3l-featured-ad">
 						<a href=" {% static 'single.html' %} ">
 							<div class="w3-featured-ad-left">
-								<img src=" {% static 'images/f1.jpg' %} " title="ad image" alt="" />
+				 <iframe width="100" height="120"
+                     src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                 </iframe> 
 							</div>
 							<div class="w3-featured-ad-right">
-								<h4>Lorem Ipsum is simply dummy text of the printing industry</h4>
+								<h4>you can also search here,lord Krishna you are also all-pervading.</h4>
 								<p>$ 450</p>
 							</div>
 							<div class="clearfix"></div>
@@ -312,7 +314,17 @@ var elem=$('#container ul');
        {% for raw in obj %}
 								<a href=" {% url 'dietapp:single' postid=raw.id %} ">
 									<li>
-									<img src="{{ baseUrl }}upload/postpic/{{raw.postfile}}" alt="image description" title="" alt="" />
+				{% if raw.postfile.url|slice:"-4:" == ".mp4" %}
+                   <video controls> <source src="{{ baseUrl }}upload/postpic/{{raw.postfile}}" > </video>
+                {% elif raw.postfile.url|slice:"-4:" == ".pdf" %}
+                   <embed src="{{ baseUrl }}upload/postpic/{{raw.postfile}}" alt="My image" width="400px"/>
+                {% elif raw.postfile.url|slice:"-4:" == ".mp3" %}
+                   <audio controls>
+                    <source src="{{ baseUrl }}upload/postpic/{{raw.postfile}}" alt="My image">
+                    </audio> 
+                {% else %}
+                    <img src="{{ baseUrl }}upload/postpic/{{raw.postfile}}" alt="image description" title="" alt="" />
+                {% endif %}
 									<section class="list-left">
 									<h5 class="title">{{raw.group}}</h5>
 									<span class="adprice">{{raw.age}} Year</span>
