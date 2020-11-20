@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,re_path
 from . import views
 from django.conf.urls import url
 app_name = 'dietapp'
@@ -8,6 +8,7 @@ urlpatterns = [
 path('health_post/', views.health_post, name='health_post'),
 path('health_data/', views.health_data, name='health_data'),
 path('alltype/', views.alltype, name='alltype'),
+ re_path(r'^category/(?P<username>[.@_+\w-]+)$', views.category, name='cat'),
 url(r'single/(?P<postid>\d+)/$', views.single, name='single'),
 #path(r'single/(?P<postid>\d+)/$', views.single, name='single'),
 ]

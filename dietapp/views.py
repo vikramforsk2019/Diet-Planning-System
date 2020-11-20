@@ -11,7 +11,8 @@ from django.contrib.auth import authenticate
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+import json
+from django.http import JsonResponse
 def index(request): 	 
 	return render(request, 'dietapp/index.html') 
 
@@ -44,3 +45,11 @@ def single(request,postid=id):
 	obj.post_views=obj.post_views+1 #This will also count multiple views by a single user.
 	obj.save()
 	return render(request, 'dietapp/single.html',{'obj':obj}) 
+
+@csrf_exempt
+def category(request,username):
+    rp = json.loads(request.body.decode('utf-8'))
+    if request.method == 'POST':
+    	print(rp)
+    return JsonResponse({'status': 'Success', 'message': 'Recoard has been updated.'})
+

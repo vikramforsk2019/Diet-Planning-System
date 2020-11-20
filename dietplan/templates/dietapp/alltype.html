@@ -29,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//fonts-->	
 <!-- js -->
 <script type="text/javascript" src=" {% static 'js/jquery.min.js' %} "></script>
+<script type="text/javascript" src=" {% static 'js/post.js' %} "></script>
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src=" {% static 'js/bootstrap.js' %} "></script>
@@ -150,11 +151,12 @@ var elem=$('#container ul');
 				</div>
 				<div class="browse-category ads-list">
 					<label>Browse Categories</label>
-					<select class="selectpicker show-tick" data-live-search="true">
+					<select class="selectpicker show-tick" data-live-search="true" onchange="report(this.value)">
 					  <option data-tokens="Mobiles">All</option>
 					  <option data-tokens="child">child</option>
 					  <option data-tokens="young">young</option>
 					  <option data-tokens="adult">adult</option>
+					  <option data-tokens="adult">Old</option>
 					</select>
 				</div>
 				<div class="search-product ads-list">
